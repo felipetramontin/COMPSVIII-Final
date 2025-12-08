@@ -1,6 +1,27 @@
 const form = document.getElementById('exercise-form');
+const list = document.getElementById('exercise-list');
 
 let exercises = [];
+
+function renderExercises() {
+    list.innerHTML = '';
+    exercises.forEach(ex => {
+        const li = document.createElement('li');
+        li.className = 'exercise-item';
+        if (ex.completed) li.classList.add('completed');
+
+        li.innerHTML = `
+        <span>${ex.name} - ${ex.sets} x ${ex.reps} ${ex.weight ? `- ${ex.weight} lbs` : ''}</span>
+        <div>
+          <button onclick="toggleComplete(${ex.id})">${ex.completed ? 'Undo' : 'Complete'}</button>
+          <button onclick="editExercise(${ex.id})">Edit</button>
+          <button onclick="deleteExercise(${ex.id})">Delete</button>
+        </div>
+      `;
+        list.appendChild(li);
+    });
+}
+
 
 // Add exercise
 form.addEventListener('submit', async (e) => {
