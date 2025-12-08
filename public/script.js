@@ -43,3 +43,9 @@ form.addEventListener('submit', async (e) => {
     form.reset();
 });
 
+// Delete exercise
+async function deleteExercise(id) {
+    await fetch(`/api/exercises/${id}`, { method: 'DELETE' });
+    exercises = exercises.filter(ex => ex.id !== id);
+    renderExercises();
+}  
