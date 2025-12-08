@@ -29,6 +29,26 @@ router.post('/', (req, res) => {
   res.json(newExercise);
 });
 
+// PUT (edit)
+router.put('/:id', (req, res) => {
+  const exercises = readData();
+  const index = exercises.findIndex(e => e.id == req.params.id);
+  if (index === -1) return res.status(404).send('Not found');
+  exercises[index] = { ...exercises[index], ...req.body };
+  saveData(exercises);
+  res.json(exercises[index]);
+});
+
+// PATCH (complete)
+router.patch('/:id', (req, res) => {
+  const exercises = readData();
+  const index = exercises.findIndex(e => e.id == req.params.id);
+  if (index === -1) return res.status(404).send('Not found');
+  exercises[index].completed = !exercises[index].completed;
+  saveData(exercises);
+  res.json(exercises[index]);
+});
+
 // DELETE
 router.delete('/:id', (req, res) => {
   let exercises = readData();
