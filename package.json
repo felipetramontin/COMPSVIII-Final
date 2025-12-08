@@ -1,0 +1,24 @@
+{
+  "name": "compsviii-final",
+  "version": "1.0.0",
+  "description": "Workout Manager is a one-page web application designed to help users track exercises, sets, reps, and weights. It streamlines workout tracking, ensuring users can easily log and manage their routines.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipetramontin/COMPSVIII-Final.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/felipetramontin/COMPSVIII-Final/issues"
+  },
+  "homepage": "https://github.com/felipetramontin/COMPSVIII-Final#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
