@@ -49,6 +49,11 @@ body {
     border-radius: 5px;
   }
   
+  .exercise-item.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+  }
+  
   .exercise-item button {
     margin-left: 5px;
   }
